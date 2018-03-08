@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>我的周报-专注建立IT精英圈子</title>
+    <link href="/bootstrap/css/bootstrap.min.css"  rel="stylesheet"/>
+    <script type="text/javascript" src="/jslib/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascript/getWeeklyById.js"></script>
+    <script type="text/javascript" src="/layer/layer-v2.0/layer/layer.js"></script>
+    <style type="text/css"> 
+    /*html5兼容*/
+    article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+    .commcontendivcodd
+    {
+        padding-left:35px;
+        padding-right:35px;
+        overflow:auto;
+        width:100%;
+    }
+    /*
+     * 修改：添加imgdiv,img;删除left,left span的样式以适应更新的周报界面
+     * 作者：王德斌
+     * 日期：2016-10-13
+    */  
+    div#imgdiv {
+        width: 50px;
+        height: 50px;
+        float: right;
+        margin-top: 10px;
+        margin-right: 15px;
+    }
+    #editordiv{
+        width:100%;
+        height:100px;
+    }
+    #editor{
+        width:100%;
+        height:100%;
+    }
+    
+    .img {
+        border-radius: 50%;
+        width:50px;
+        height:50px;
+    } 
+    /* 
+     * 修改：添加username,commentcdivseatprovince,commentcdivprovince样式;
+     *      修改commentcdivname,commentcdivtime,commentcdivassistant样式使其与新界面匹配
+     * 作者：王德斌
+     * 日期：2016-10-13 
+     */
+    .username{
+        font-weight: 600;
+        position: relative;
+        top: 0px;
+        margin-left:10px;
+    }
+    .commentcdivname{
+        position: relative;
+        font-weight: 600;
+        top: 0px;
+        margin-left:10px;
+    }
+    .commentcdivtime{
+        position: relative;
+        font-weight: 600;
+        top: 0px;
+        margin-left:10px;
+    }
+    .commentcdivseatprovince{
+        position: relative;
+        font-weight: 600;
+        top: 0px;
+        margin-left:10px;
+    }
+    .commentcdivprovince{
+        position: relative;
+        font-weight: 600;
+        top: 0px;
+        margin-left:10px;
+    }
+    .commentcdivassistant{
+        position: absolute;
+        top: 50px;
+        right:100px;
+        text-align:center;
+        font-size:13px;
+        color:#1C86EE;
+    }
+    .label-clue{
+    background-color: #39c3be;
+    }
+    </style> 
+</head>
+<body  style="background-color:#EEEEEE;"  id="mybody">
+<div class="container">
+<div style="overflow:auto; width:100%;">
+
+            <!-- 正文 -->
+            <!-- <div class="content-wrap"> -->
+    
+    <div id="contas" style="overflow:auto; width:100%;">
+    
+         <!-- 
+         * 修改：添加用户头像imgdiv、出生地commentcdivseatprovince及所在地commentcdivprovince
+         * 作者：王德斌
+         * 日期：2016-10-13
+         
+         * 修改：添加sex参数，修复默认头像显示问题
+         * 作者：王德斌
+         * 日期：2016-10-16 
+         -->
+        <div class="commentcdiv" style="overflow:auto; width:100%; overflow-x:hidden;">
+            <div style="height: 50px; background-color:rgb(71,201,255)">
+            <div class="row">
+                <div class="col-xs-12 col-sm-2">
+                <input type="hidden" id="sex" />
+                <input type="button" style="overflow:auto; width:20%;" id="firstsummary" title="第一周" value="&lt;&lt;" style="margin-right:-10px; ">
+                <input type="button" style="overflow:auto; width:20%;" id="presummary"title="上一周" value="&lt;&nbsp;" style="margin-right:-10px;">
+                <input type="button" style="overflow:auto; width:20%;" id="nextsummary"title="下一周" value="&gt;&nbsp;" style="margin-right:-10px;">
+                <input type="button" style="overflow:auto; width:20%;" id="currentsummary"title="最近一周" value="&gt;&gt;">
+                <span class="username"></span>
+                </div>
+                <div class="col-xs-4 col-sm-2"><span class="commentcdivname"></span></div> 
+                <div class="col-xs-3 col-sm-2"><span class="commentcdivtime hidden-xs"></span></div>
+                <div class="col-xs-3 col-sm-2"><span class="commentcdivseatprovince hidden-xs"></span></div>
+                <div class="col-xs-2 col-sm-2"><span class="commentcdivprovince hidden-xs"></span></div>
+             </div>
+                <span class="commentcdivassistant hidden-xs"  style="margin-right:10%; "></span>
+                <div id="imgdiv"  style="margin-top:-10px; "></div>
+                <input type="hidden" id="memid">
+            </div>
+            <hr color="#00CCFF" style="height: 3px;" />
+            
+	            <div class="commtent">
+	                <div id="images" style='transform:rotate(-15deg);position: absolute; margin-top: -10%; width: 80%; height: 80%; '>
+                        
+                    </div>
+	                <div id="cont" >
+	                </div>
+	            </div>
+	            
+            <br><br>
+        </div>
+        <!--
+            作者：615893265@qq.com
+            时间：2015-11-23
+            描述：这是审阅标记 -->
+       
+       
+        
+        <!--
+            作者：615893265@qq.com
+            时间：2015-11-23
+            描述：这是评论内容列表
+        -->
+        <div class="commcontendiv" id="commcontendiv">
+            <div  class="commcontendivtd">
+                <span class="commcontendivtdspan">评论</span>
+            </div>
+            <div id="comments"></div>
+        </div>
+        <div class="commcontendiv" id="commcontendiv">
+            <div  class="commcontendivtd">
+                <span class="commcontendivtdspan">谁看过我</span>
+            </div>
+            <div id="visit"></div>
+        </div>
+        <!--
+            作者：615893265@qq.com
+            时间：2015-11-23
+            描述：这是写评论的编辑器
+        -->
+        <br><br>
+        <div id="editordiv">
+            <!-- 
+            <script id="editor" type="text/plain" style="width: 120px;height: 100px;"></script>
+             -->
+             <textarea id="editor" placeholder="请在此输入评论内容"></textarea>
+        </div>
+        <div style="float:left;">
+        <button class="btn btn-info" id="comment"><span>发表评论</span></button>
+        </div>
+        <div style="float:right;" id="recommendtd" style="display:none;">
+        <div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div>
+      </div>
+     <div>  
+
+     </div>
+   
+    </div>
+</div>
+
+</div>
+</body>
+</html>
